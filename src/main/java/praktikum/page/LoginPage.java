@@ -8,7 +8,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 public class LoginPage extends Header {
     private final WebDriver webDriver;
@@ -37,14 +36,14 @@ public class LoginPage extends Header {
     }
 
     public void setEmail(String email){
-        WebElement element = (new WebDriverWait(webDriver, Duration.ofSeconds(10)))
+        (new WebDriverWait(webDriver, Duration.ofSeconds(10)))
                 .until(ExpectedConditions.elementToBeClickable(signInButton));
         WebElement loginEmail = webDriver.findElement(emailInputField);
         loginEmail.sendKeys(email);
     }
 
     public void setPassword(String password){
-        WebElement element = (new WebDriverWait(webDriver, Duration.ofSeconds(10)))
+        (new WebDriverWait(webDriver, Duration.ofSeconds(10)))
                 .until(ExpectedConditions.elementToBeClickable(signInButton));
         WebElement loginEmail = webDriver.findElement(passwordInputField);
         loginEmail.sendKeys(password);
@@ -62,7 +61,7 @@ public class LoginPage extends Header {
     }
 
     public boolean checkSignInLink(){
-        WebElement element = (new WebDriverWait(webDriver, Duration.ofSeconds(10)))
+        (new WebDriverWait(webDriver, Duration.ofSeconds(10)))
                 .until(ExpectedConditions.elementToBeClickable(signInButton));
         return webDriver.findElement(signInButton).isDisplayed();
     }

@@ -8,7 +8,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 public class Header {
     private final WebDriver webDriver;
@@ -33,10 +32,8 @@ public class Header {
         js.executeScript("arguments[0].click();", webDriver.findElement(logoLink));
     }
     public void clickPersonalAccountLink(){
-        WebElement element = (new WebDriverWait(webDriver, Duration.ofSeconds(10)))
+        (new WebDriverWait(webDriver, Duration.ofSeconds(10)))
                 .until(ExpectedConditions.elementToBeClickable(personalAccountLink));
         webDriver.findElement(personalAccountLink).click();
-//        JavascriptExecutor js = (JavascriptExecutor) webDriver;
-//        js.executeScript("arguments[0].click();", webDriver.findElement(personalAccountLink));
     }
 }

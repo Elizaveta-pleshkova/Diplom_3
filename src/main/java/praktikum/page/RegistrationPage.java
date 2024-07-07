@@ -4,11 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 public class RegistrationPage {
     private final WebDriver webDriver;
@@ -33,10 +28,6 @@ public class RegistrationPage {
     public void clickSignInLink(){
         JavascriptExecutor js = (JavascriptExecutor) webDriver;
         js.executeScript("arguments[0].click();", webDriver.findElement(signInLink));
-    }
-    public void clickRegisterButton(){
-        JavascriptExecutor js = (JavascriptExecutor) webDriver;
-        js.executeScript("arguments[0].click();", webDriver.findElement(registerButton));
     }
 
     public void setName(String name){
